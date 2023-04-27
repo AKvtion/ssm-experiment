@@ -1,0 +1,5 @@
+org\liangfacan53\courses\sf\ssm\mybatis\dao\ProviderMapper.class
+org\liangfacan53\courses\sf\ssm\mybatis\pojo\Provider.class
+org\liangfacan53\courses\sf\ssm\mybatis\pojo\Bill.class
+org\liangfacan53\courses\sf\ssm\mybatis\utils\MyBatisUtils.class
+org\liangfacan53\courses\sf\ssm\mybatis\dao\BillMapper.class

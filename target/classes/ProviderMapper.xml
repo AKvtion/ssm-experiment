@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="org.liangfacan53.courses.sf.ssm.mybatis.dao.ProviderMapper">
+
+    <select id="count" resultType="int">
+        select count(*) as count
+        from smbms_provider
+    </select>
+
+    <select id="getProviders" resultType="Provider">
+        select * from smbms_provider
+        <where>
+            <if test="proCode != null and proCode != ''">
+                and proCode like CONCAT ('%',#{proCode},'%')
+            </if>
+            <if test="proName != null and proName != ''">
+                and proName like CONCAT ('%',#{proName},'%')
+            </if>
+        </where>
+    </select>
+
+    <insert id="add" parameterType="Provider">
+        insert into smbms_provider (proCode, proName, proDesc, proContact, proPhone,
+                                    proAddress, proFax, createdBy, creationDate)
+        values (#{proCode}, #{proName}, #{proDesc}, #{proContact}, #{proPhone}, #{proAddress},
+                #{proFax}, #{createdBy}, #{creationDate})
+    </insert>
+
+    <update id="update" parameterType="Provider">
+        update smbms_provider
+        <trim prefix="set" suffixOverrides="," suffix="where id = #{id}">
+            <if test="proCode != null">proCode=#{proCode},</if>
+            <if test="proName != null">proName=#{proName},</if>
+            <if test="proDesc != null">proDesc=#{proDesc},</if>
+            <if test="proContact != null">proContact=#{proContact},</if>
+            <if test="proPhone != null">proPhone=#{proPhone},</if>
+            <if test="proAddress != null">proAddress=#{proAddress},</if>
+            <if test="proFax != null">proFax=#{proFax},</if>
+            <if test="modifyBy != null">modifyBy=#{modifyBy},</if>
+            <if test="modifyDate != null">modifyDate=#{modifyDate},</if>
+        </trim>
+    </update>
+
+    <delete id="deleteById" parameterType="Integer">
+        delete
+        from smbms_provider
+        where id = #{id}
+    </delete>
+</mapper>

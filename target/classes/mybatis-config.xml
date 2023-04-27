@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- 配置文件的根元素 -->
+<configuration>
+    <!-- 属性：定义配置外在化 -->
+    <properties resource="database.properties"/>
+    <!-- 设置：定义mybatis的一些全局性设置 -->
+    <settings>
+        <setting name="logImpl" value="LOG4J2"/>
+        <setting name="autoMappingBehavior" value="FULL"/>
+    </settings>
+
+    <!-- 类型名称：为一些类定义别名 -->
+    <typeAliases>
+        <package name="org.liangfacan53.courses.sf.ssm.mybatis.pojo"/>
+    </typeAliases>
+
+    <!-- 环境：配置mybatis的环境 -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.username}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <package name="org.liangfacan53.courses.sf.ssm.mybatis.dao"/>
+    </mappers>
+
+</configuration>
