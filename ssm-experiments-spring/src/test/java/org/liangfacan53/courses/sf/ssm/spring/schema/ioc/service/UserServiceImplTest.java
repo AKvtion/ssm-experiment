@@ -13,8 +13,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.CoreMatchers.is;
 
 @ExtendWith(SpringExtension.class)
-//@SpringJUnitConfig(locations = "classpath:schema/iocDemoContext.xml")   //通过xml方式
-@SpringJUnitConfig(classes = IocAppConfig.class)
+@SpringJUnitConfig(locations = "classpath:schema/iocDemoContext.xml")   //通过xml方式
 class UserServiceImplTest {
 
     @Autowired

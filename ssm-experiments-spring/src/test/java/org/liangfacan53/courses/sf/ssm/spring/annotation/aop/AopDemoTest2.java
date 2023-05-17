@@ -13,7 +13,7 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
-@SpringJUnitConfig(classes = AopAppConfig.class)
+@SpringJUnitConfig(classes = AopAppConfig.class)    //通过注解方式实现aop
 class AopDemoTest2 {
 
     @Autowired

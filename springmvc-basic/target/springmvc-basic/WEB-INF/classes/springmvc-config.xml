@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="org.liangfacan53.courses.sf.ssm.springmvc.controller"/>
+    <context:component-scan base-package="org.liangfacan53.courses.sf.ssm.springmvc.service"/>
+
+    <!--region annotation-driven-->
+    <!--will automate register corresponding `HandlerMapping` and `HandlerAdapter`-->
+    <mvc:annotation-driven/>
+    <!--endregion annotation-driven-->
+
+    <!--region viewResolver-->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+    <!--endregion viewResolver-->
+
+    <!--region static mapping-->
+    <mvc:resources mapping="/images/**" location="/WEB-INF/static/images/"/>
+    <!--endregion static mapping-->
+
+    <!--    <context:component-scan base-package="org.arm.courses.sf.ssm.springmvc.interceptor"/>-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/login"/>
+            <mvc:exclude-mapping path="/logout"/>
+            <mvc:exclude-mapping path="/hello"/>
+            <bean class="org.liangfacan53.courses.sf.ssm.springmvc.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+</beans>

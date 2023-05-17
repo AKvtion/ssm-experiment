@@ -16,12 +16,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 
 @ExtendWith(SpringExtension.class)
-@SpringJUnitConfig(locations = "classpath:schema/aopDemoContext.xml")
+@SpringJUnitConfig(locations = "classpath:schema/aopDemoContext.xml")   //通过xml实现aop
 class AopDemoTest {
 
     @Autowired
     AopDemo aopDemo;
-
     @BeforeEach
     void setUp() {
     }
