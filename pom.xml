@@ -12,6 +12,7 @@
     <module>ssm-experiments-mybatis</module>
     <module>ssm-experiments-spring</module>
       <module>springmvc-basic</module>
+    <module>ssm-experiments-springmvc</module>
   </modules>
 
   <packaging>pom</packaging>
@@ -21,6 +22,14 @@
   <url>http://www.example.com</url>
 
   <properties>
+      <!--    springmvc-->
+      <jstl.version>2.0.0</jstl.version>
+      <taglibs.version>1.2.5</taglibs.version>
+      <servlet.version>4.0.4</servlet.version>
+      <commons-fileupload.version>1.5</commons-fileupload.version>
+      <hibernate-validator.version>6.2.5.Final</hibernate-validator.version>
+      <jackson-databind.version>2.13.5</jackson-databind.version>
+
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
@@ -44,6 +53,52 @@
 
   <dependencyManagement>
     <dependencies>
+<!--      mvc-->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>5.3.24</version>
+      </dependency>
+
+      <dependency>
+        <groupId>jakarta.servlet</groupId>
+        <artifactId>jakarta.servlet-api</artifactId>
+        <version>${servlet.version}</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>jakarta.servlet.jsp.jstl</groupId>
+        <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+        <version>${jstl.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.taglibs</groupId>
+        <artifactId>taglibs-standard-impl</artifactId>
+        <version>${taglibs.version}</version>
+        <scope>runtime</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.apache.taglibs</groupId>
+        <artifactId>taglibs-standard-spec</artifactId>
+        <version>${taglibs.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-fileupload</groupId>
+        <artifactId>commons-fileupload</artifactId>
+        <version>${commons-fileupload.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.hibernate.validator</groupId>
+        <artifactId>hibernate-validator</artifactId>
+        <version>${hibernate-validator.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson-databind.version}</version>
+      </dependency>
+
+
       <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
       <dependency>
         <groupId>org.springframework</groupId>
@@ -63,12 +118,12 @@
         <version>5.3.24</version>
         <scope>test</scope>
       </dependency>
-<!--      springmvc-basic-->
+<!--      springmvc-basic
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-webmvc</artifactId>
         <version>5.2.8.RELEASE</version>
-      </dependency>
+      </dependency>-->
 
 
       <!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
