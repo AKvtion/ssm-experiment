@@ -11,7 +11,7 @@ public class IndexController {
     @Autowired
     private IndexService service;
 
-    //    http://localhost:8080/ssm_experiments_springmvc_war/hello
+    //    http://localhost:8080/hello
     @RequestMapping("/hello")
     public ModelAndView index() {
         return new ModelAndView("hello", service.getDefault());
