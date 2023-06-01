@@ -13,6 +13,7 @@
     <module>ssm-experiments-spring</module>
       <module>springmvc-basic</module>
     <module>ssm-experiments-springmvc</module>
+    <module>ssm-experiments-ssm</module>
   </modules>
 
   <packaging>pom</packaging>
@@ -22,13 +23,17 @@
   <url>http://www.example.com</url>
 
   <properties>
-      <!--    springmvc-->
-      <jstl.version>2.0.0</jstl.version>
-      <taglibs.version>1.2.5</taglibs.version>
-      <servlet.version>4.0.4</servlet.version>
-      <commons-fileupload.version>1.5</commons-fileupload.version>
-      <hibernate-validator.version>6.2.5.Final</hibernate-validator.version>
-      <jackson-databind.version>2.13.5</jackson-databind.version>
+<!--    mybatis spring 整合-->
+    <mybatis-spring.version>2.1.0</mybatis-spring.version>
+    <druid.version>1.2.14</druid.version>
+
+    <!--    springmvc-->
+    <jstl.version>2.0.0</jstl.version>
+    <taglibs.version>1.2.5</taglibs.version>
+    <servlet.version>4.0.4</servlet.version>
+    <commons-fileupload.version>1.5</commons-fileupload.version>
+    <hibernate-validator.version>6.2.5.Final</hibernate-validator.version>
+    <jackson-databind.version>2.13.5</jackson-databind.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.7</maven.compiler.source>
@@ -53,7 +58,24 @@
 
   <dependencyManagement>
     <dependencies>
-<!--      mvc-->
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-jdbc</artifactId>
+        <version>5.3.15</version>
+      </dependency>
+      <dependency>
+        <groupId>org.mybatis</groupId>
+        <artifactId>mybatis-spring</artifactId>
+        <version>${mybatis-spring.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>druid</artifactId>
+        <version>${druid.version}</version>
+      </dependency>
+
+
+      <!--      mvc-->
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-webmvc</artifactId>

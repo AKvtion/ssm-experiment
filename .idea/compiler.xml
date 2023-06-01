@@ -9,6 +9,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="ssm-experiments-springmvc" />
         <module name="ssm-experiments-mybatis" />
+        <module name="ssm-experiments-ssm" />
         <module name="ssm-experiments-spring" />
         <module name="springmvc-basic" />
       </profile>
