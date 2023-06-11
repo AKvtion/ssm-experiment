@@ -11,7 +11,7 @@
   <modules>
     <module>ssm-experiments-mybatis</module>
     <module>ssm-experiments-spring</module>
-      <module>springmvc-basic</module>
+    <module>springmvc-basic</module>
     <module>ssm-experiments-springmvc</module>
     <module>ssm-experiments-ssm</module>
   </modules>
@@ -53,11 +53,30 @@
     <!--endregion dependency.commons.version-->
     <!--region plugin.version-->
     <plugin.surefire.version>3.0.0-M6</plugin.surefire.version>
+
+    <mybatisplus.version>3.5.3</mybatisplus.version>
     <!--endregion plugin.version-->
   </properties>
 
   <dependencyManagement>
     <dependencies>
+      <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.6.4</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-boot-starter</artifactId>
+        <version>${mybatisplus.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus</artifactId>
+        <version>${mybatisplus.version}</version>
+      </dependency>
+
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-jdbc</artifactId>

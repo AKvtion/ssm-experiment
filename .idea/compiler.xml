@@ -8,14 +8,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ssm-experiments-springmvc" />
+        <module name="ssm-experiments-mybatisPlus" />
         <module name="ssm-experiments-mybatis" />
         <module name="ssm-experiments-ssm" />
         <module name="ssm-experiments-spring" />
         <module name="springmvc-basic" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="mybatis" target="1.5" />
-    </bytecodeTargetLevel>
   </component>
 </project>
